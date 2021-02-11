@@ -5,7 +5,7 @@
 
 `$ docker-compose -f docker-compose.yml up -d`
 
-## Dependencies, file permissions and encryption key
+## Laravel dependencies, file permissions and encryption key
 `$ docker exec [container_id] composer install`
 
 `$ docker exec [container_id] chown -R www-data:www-data storage/`
