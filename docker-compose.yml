@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+    
+    libraryapp:
+      build: .
+      ports:
+        - 8282:80
+      restart: "no"
+      volumes:
+        - .:/var/www/html
+      #environment:
+        #- VIRTUAL_HOST=libraryapp.local
+      networks:
+          - libraryapp
+
+    mysql-server:
+      image: 'mysql:5.7'
+      command: --default-authentication-plugin=mysql_native_password
+      restart: "no"
+      environment:
+        MYSQL_ROOT_PASSWORD: libraryapp
+      ports:
+        - '3306:3306'
+      #volumes:
+       # - ./mysqldata:/var/www/html/mysqldata
+      networks:
+          - libraryapp
+networks:
+      libraryapp:
+        driver:
+            bridge
