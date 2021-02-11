@@ -5,7 +5,7 @@ services:
     libraryapp:
       build: .
       ports:
-        - 8282:80
+        - 8080:80
       restart: "no"
       volumes:
         - .:/var/www/html
