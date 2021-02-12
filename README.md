@@ -10,4 +10,6 @@
 
 `$ docker exec [container_id] chown -R www-data:www-data storage/`
 
+`$ docker exec [container_id] mv .env.example .env`
+
 `$ docker exec [container_id] php artisan key:generate`
